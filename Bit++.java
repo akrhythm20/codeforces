@@ -10,16 +10,11 @@ public class Main {
 		int value = 0;
 		for(int i=1; i<=n; i++) {
 			String statement = sc.next();
-			for(int j=0; j<3; j++) {
-				if(statement.charAt(j)=='+') {
+				if(statement.charAt(1)=='+') 
 					value++;
-					break;
-				}
-				if(statement.charAt(i)=='-') {
-					value--;
-					break;
-				}
-			}
+				else 
+					value--;	
+			
 		}
 		
 		System.out.println(value);
