@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	   // n, k, l, c, d, p, nl, np,
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int k = sc.nextInt();
+		int l = sc.nextInt();
+		int c = sc.nextInt();
+		int d = sc.nextInt();
+		int p = sc.nextInt();
+		int nl = sc.nextInt();
+		int np = sc.nextInt();
+		
+		int drink = k*l;
+		int lime = c;
+		int salt = p;
+		
+		int toast = Math.min(drink/nl, Math.min(lime*d, salt/np));
+		System.out.println(toast/n);
+		
+	}
+}
