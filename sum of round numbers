@@ -1,0 +1,32 @@
+// https://codeforces.com/problemset/problem/1352/A
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		
+		for(int i=1; i<=t; i++){
+		    int n = sc.nextInt();
+		    int count = 0, div = 10;
+		    ArrayList<Integer> ls = new ArrayList<>();
+		    while(n>0){
+		        int mod = n%div;
+		        if(mod!=0){
+		            count++;
+		            ls.add(mod);
+		        }
+		        n -= (n%div);
+		        if(n!=0)
+		            while(n%div==0) 
+		                div*=10;
+		    }
+		    System.out.println(count);
+		    for(Integer ele : ls) System.out.print(ele+" ");
+		    System.out.println();
+		}
+		
+	}
+}
