@@ -1,0 +1,45 @@
+// https://codeforces.com/problemset/problem/144/A
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] sldr = new int[n];
+		for(int i=0; i<n; i++) sldr[i] = sc.nextInt();
+		int minIndex = -1;
+		int min = Integer.MAX_VALUE;
+		for(int i=0; i<n; i++){
+		    if(sldr[i]<=min) {
+		        min = sldr[i];
+		        minIndex = i;
+		    }
+		}
+		
+		int swaps = 0;
+		if(minIndex != n-1){
+		    for(int i=minIndex; i<n-1; i++){
+		        int temp = sldr[i];
+		        sldr[i] = sldr[i+1];
+		        sldr[i+1] = temp;
+		        
+		        swaps++;
+		    }
+		}
+		
+		int maxIndex = -1;
+		int max = Integer.MIN_VALUE;
+		
+		for(int i=n-1; i>=0; i--){
+		    if(sldr[i]>=max){
+		        maxIndex = i;
+		        max = sldr[i]; 
+		    } 
+		}
+		
+		swaps += maxIndex;
+		
+		System.out.println(swaps);
+	}
+}
