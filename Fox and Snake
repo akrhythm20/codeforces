@@ -1,0 +1,42 @@
+// https://codeforces.com/problemset/problem/510/A
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt(), m = sc.nextInt();
+		char[][] maz = new char[n][m];
+		for(int i=0; i<n; i+=2){
+		    for(int j=0; j<m; j++){
+		        maz[i][j] = '#';
+		    }
+		}
+		
+		int lev = 1;
+		for(int i=1; i<n-1; i+=2){
+		    for(int j=0; j<m; j++){
+		        if(lev%2!=0){
+		            if(j==m-1)
+		                maz[i][j] = '#';
+		            else 
+		                maz[i][j] = '.';
+    		    } else {
+    		        if(j==0)
+    		            maz[i][0] = '#';
+    		        else 
+    		            maz[i][j] = '.';
+    		    }
+		    }
+		    lev++;
+		}
+		
+		for(int i=0; i<n; i++){
+		    for(int j=0; j<m; j++){
+		        System.out.print(maz[i][j]);
+		    }
+		    System.out.println();
+		}
+		
+	}
+}
